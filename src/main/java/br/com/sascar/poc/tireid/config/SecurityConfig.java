@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http.authorizeRequests()
-		.antMatchers("/v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**").permitAll()
+		.antMatchers("/poc-tireid/usuario","/v2/api-docs", "/configuration/**", "/swagger*/**", "/webjars/**").permitAll()
 		.anyRequest().authenticated()
 		.and().csrf().disable();
 		http.addFilter(new JWTAutheticationFilter(authenticationManager(), jWtUtil));
